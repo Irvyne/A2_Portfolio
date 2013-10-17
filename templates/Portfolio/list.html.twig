@@ -9,6 +9,9 @@
             <small>Created the {{ portfolio.createdAt }}</small>
              /
             <small>Updated the {{ portfolio.updatedAt }}</small>
+            <br>
+            <a href="edit.php?id={{ portfolio.id }}">Modifier</a>
+            <a href="delete.php?id={{ portfolio.id }}">Effacer</a>
         </article>
     {% endfor %}
 {% endblock %}
