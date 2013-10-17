@@ -1,1 +1,18 @@
 {% extends 'base.html.twig' %}
+
+{% block content %}
+    {% if portfolio is defined and false != portfolio %}
+        <form action="" method="post" enctype="multipart/form-data">
+            <label for="name">Name: </label>
+            <input type="text" name="name" id="name" value="{{ portfolio.name }}" placeholder="name..." required autofocus><br>
+            <label for="content">Content: </label>
+            <textarea name="content" id="content" placeholder="content..." required>{{ portfolio.name }}</textarea><br>
+            <label for="image_name">Image name: </label>
+            <input type="text" name="image_name" id="image_name" placeholder="image name..."><br>
+            <input type="file" name="image" id="image"><br>
+            <input type="submit" name="submit" value="Update the portfolio !">
+        </form>
+    {% else %}
+        <h1>Portfolio Not Found (404 error) !</h1>
+    {% endif %}
+{% endblock %}
