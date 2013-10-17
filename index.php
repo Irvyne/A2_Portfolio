@@ -6,16 +6,10 @@
 
 require '_header.php';
 
-$portfolio = new Portfolio(array(
-    'name'      => 'Nom du portfolio',
-    'content'   => 'Contenu',
-    'img'       => '/efezf/ezfezf.png',
-    'createdAt' => date('Y-m-d H:i:s'),
-    'updatedAt' => date('Y-m-d H:i:s'),
-));
-
 $portfolioManager = new PortfolioManager($pdo);
 
-//$portfolioManager->add($portfolio);
+$portfolios = $portfolioManager->findAll();
 
-var_dump($portfolio);
+echo $twig->render('Portfolio/list.html.twig', array(
+    'portfolios' => $portfolios,
+));

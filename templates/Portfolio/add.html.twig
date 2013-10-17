@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <form action="" method="post" enctype="multipart/form-data">
+        <label for="name">Name: </label>
+            <input type="text" name="name" id="name" placeholder="name..." required autofocus><br>
+        <label for="content">Content: </label>
+            <textarea name="content" id="content" placeholder="content..." required></textarea><br>
+        <label for="image_name">Image name: </label>
+            <input type="text" name="image_name" id="image_name" placeholder="image name..." required><br>
+        <input type="file" name="image" id="image" required><br>
+        <input type="submit" name="submit" value="Create the portfolio !">
+    </form>
+{% endblock %}

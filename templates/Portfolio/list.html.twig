@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    {% for portfolio in portfolios %}
+        <article>
+            <h1>{{ portfolio.name|upper }}</h1>
+            <p>{{ portfolio.content }}</p>
+            <img src="uploads/{{ portfolio.img }}" alt="{{ portfolio.name }}">
+            <small>Created the {{ portfolio.createdAt }}</small>
+             /
+            <small>Updated the {{ portfolio.updatedAt }}</small>
+        </article>
+    {% endfor %}
+{% endblock %}
